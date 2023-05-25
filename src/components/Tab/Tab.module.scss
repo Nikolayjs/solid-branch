@@ -1,0 +1,13 @@
+.container {
+  @apply border-b border-b-gray-100;
+  ul {
+    @apply -mb-px flex items-center gap-10 text-sm font-medium justify-center;
+  }
+}
+.activeTab {
+  @apply inline-flex items-center gap-2 px-1 py-3 text-blue-700 relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-blue-700 cursor-default;
+}
+
+.inactiveTab {
+  @apply text-gray-700 cursor-pointer hover:text-blue-700;
+}

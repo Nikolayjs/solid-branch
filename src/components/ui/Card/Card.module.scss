@@ -1,0 +1,12 @@
+.card {
+  @apply mx-auto border-[1px] border-gray-600/20 mt-3 min-w-[49%] max-w-md rounded-md bg-white shadow;
+  div {
+    @apply p-4;
+  }
+  h3 {
+    @apply text-xl font-medium text-gray-900 text-center;
+  }
+  p {
+    @apply mt-3 text-base font-normal text-gray-800;
+  }
+}

@@ -1,0 +1,30 @@
+.container {
+  @apply flex justify-center;
+}
+.table {
+  @apply overflow-scroll max-h-[calc(100vh-15vh)] rounded-lg border border-gray-200 shadow-md max-w-6xl;
+  table {
+    @apply w-full border-collapse bg-white text-left text-sm text-gray-500;
+    thead {
+      @apply bg-gray-50;
+    }
+    th {
+      @apply px-6 py-4 font-medium text-gray-900;
+    }
+    tbody {
+      @apply divide-y divide-gray-100 border-t border-gray-100;
+      tr {
+        @apply hover:bg-gray-50;
+        th {
+          @apply px-6 py-4 font-medium text-gray-900;
+        }
+        td {
+          @apply px-6 py-4;
+          span {
+            @apply inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold;
+          }
+        }
+      }
+    }
+  }
+}
