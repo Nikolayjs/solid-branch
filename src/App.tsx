@@ -15,7 +15,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Summary data={data} />} />
       <Route path="/navigator" element={<FullList data={data} />} />
-      <Route path="/navigator/:tab" element={<List data={data} />} />
+      <Route path="/navigator/:tab" element={<List />} />
     </Routes>
   );
 }

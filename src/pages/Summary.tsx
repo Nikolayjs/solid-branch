@@ -4,6 +4,7 @@ import Button from '../components/ui/Button/Button';
 import Card from '../components/ui/Card/Card';
 import Loader from '../components/ui/Loader/Loader';
 import { dataType, IData } from '../types/transaction.types';
+import ucFirst from '../utils/ucFirst';
 
 import styles from './Pages.module.scss';
 
@@ -14,9 +15,7 @@ const Summary: FC<{ data: Array<IData> }> = ({ data }) => {
   const getTitle = (type: dataType): string => {
     return data.filter((d) => d.type === type).length.toString();
   };
-  const ucFirst = (word: string) => {
-    return word[0].toUpperCase() + word.slice(1);
-  };
+
   if (!data) return <Loader />;
   return (
     <div className={styles.container}>
@@ -32,10 +31,10 @@ const Summary: FC<{ data: Array<IData> }> = ({ data }) => {
         </footer>
       </Card>
       <div className="flex gap-3 flex-wrap">
-        {arr.map((a) => (
+        {arr.map((a, i) => (
           <Card key={a} title={getTitle(a)} text={ucFirst(a)}>
             <div className="flex justify-center">
-              <Button onClick={() => navigate('navigator/1')}>See All</Button>
+              <Button onClick={() => navigate(`navigator/${i + 1}`)}>See All</Button>
             </div>
           </Card>
         ))}

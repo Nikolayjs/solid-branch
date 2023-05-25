@@ -5,12 +5,12 @@ import Tab from '../components/Tab/Tab';
 import Button from '../components/ui/Button/Button';
 import Loader from '../components/ui/Loader/Loader';
 import MainLayout from '../layouts/MainLayout';
-import { IData } from '../types/transaction.types';
+import { ITransaction } from '../types/transaction.types';
 
 import styles from './Pages.module.scss';
 
-const List: FC<{ data: Array<IData> }> = ({ data }) => {
-  const [transaction, setTransaction] = useState<any>([]);
+const List: FC = () => {
+  const [transaction, setTransaction] = useState<ITransaction>();
   const navigate = useNavigate();
   useEffect(() => {
     setTransaction({
@@ -20,6 +20,7 @@ const List: FC<{ data: Array<IData> }> = ({ data }) => {
       loan: api.fetchTransaction('loan'),
     });
   }, []);
+
   const { tab } = useParams();
   if (!transaction) return <Loader />;
   return (
