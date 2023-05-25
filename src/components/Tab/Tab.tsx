@@ -39,7 +39,7 @@ const Tab: FC<{ tab: string | undefined; data: ITransaction }> = ({ tab, data })
           ))}
         </ul>
       </div>
-      <div className="py-3">
+      <div className="py-3 w-full">
         {newTab.map((n, i) => (
           <div key={i} className={activeTab !== `${(i + 1).toString()}` ? 'hidden' : ''}>
             <Table data={data[n.toLowerCase()]} />
